@@ -59,19 +59,20 @@ namespace ShilglesLab.Comparers
             return GetMinHashes(CalcHashes(GetShingles(Canonisation(text),shingleSize),hashCount));
         }
 
+/*-------------------Метод удаления стоп-символов и стоп-слов из текста-------------------------*/
         private List<string> Canonisation(string text)
         {
             var resText = new List<string>();
-            foreach (var word in text.ToLower().Split(Constants.StopSymbols))
+            foreach (var word in text.ToLower().Split(Constants.StopSymbols))//стоп-символы например: , . ! 
             {
-                if (!Constants.StopWords.Contains(word))
+                if (!Constants.StopWords.Contains(word))//если слова нет в списке стоп-слова
                 {
-                    resText.Add(word);
+                    resText.Add(word);//добавим его в результат
                 }
             }
             return resText;
         }
-
+/*-----------------------------------------------------------------------------------------*/
         private List<string> GetShingles(List<string> words, int count = 10)
         {
             List<string> shingles = new List<string>();
