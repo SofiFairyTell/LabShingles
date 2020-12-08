@@ -73,12 +73,13 @@ namespace ShilglesLab.Comparers
             return resText;
         }
 /*-----------------------------------------------------------------------------------------*/
-        private List<string> GetShingles(List<string> words, int count = 10)
+/*----------------------------Метод получения шиинглов------------------------------------*/      
+     private List<string> GetShingles(List<string> words, int count = 10)
         {
-            List<string> shingles = new List<string>();
-
-            for (int i = 0; i < words.Count - count + 1; i++) 
-            {
+            List<string> shingles = new List<string>();//список содержит строку из 10 слов
+                                                       //без пробелов
+            for (int i = 0; i < words.Count - count + 1; i++) //после каждой итерации сдвиг
+            {                                                 //на одно слово
                 string shingle = "";
                 foreach(var w in words.Skip(i).Take(count))
                 {
@@ -88,7 +89,12 @@ namespace ShilglesLab.Comparers
             }
             return shingles;
         }
-
+        /*Example: 
+        count = 2;
+        TEXT: сборник задач физике старшей школы
+        i = 1: shingle = сборникзадач
+        i = 2: shingle = задачфизике ... etc*/
+/*-----------------------------------------------------------------------------------------*/
         private List<List<int>> CalcHashes(List<string> shingles, int countHashes = 36)
         {
             List<List<int>> hashes = new List<List<int>>();
