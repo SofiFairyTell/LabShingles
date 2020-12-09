@@ -29,6 +29,7 @@ namespace ShilglesLab.Comparers
             return EstimateSimilarity(HashCount);
         }
 
+/*------------------------Метод для сравнения сумм в хеш-таблицах двух текстов-----------------*/
         static public int CompareHashes(List<int> hashes1, List<int> hashes2)
         {
             int sim = 0;
@@ -40,10 +41,8 @@ namespace ShilglesLab.Comparers
                 }
             }
             return sim;
-
         }
-
-
+/*-----------------------------------------------------------------------------------------*/
 
         private double EstimateSimilarity(int hashCount) 
         {
