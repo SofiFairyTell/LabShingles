@@ -148,9 +148,9 @@ namespace ShilglesLab.Comparers
             int m = 1;
             for (int i = 1; i < shingle.Length; i++, m*=p)
             {
-                hash = (hash * p) % mod + (int)shingle[i];
+                hash = (hash * p) % mod + (int)shingle[i]; //по схеме Горнера посчитаем значение в точке за линейное время от max степени
             }
-            return hash % mod;
+            return hash % mod;//уменьшение по модулю?
         }
 
     }
