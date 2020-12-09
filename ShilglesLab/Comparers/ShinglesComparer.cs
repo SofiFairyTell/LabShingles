@@ -95,6 +95,7 @@ namespace ShilglesLab.Comparers
         i = 1: shingle = сборникзадач
         i = 2: shingle = задачфизике ... etc*/
 /*-----------------------------------------------------------------------------------------*/
+/*-------------------------------Вычисление хеш-значений для каждой строки----------------*/
         private List<List<int>> CalcHashes(List<string> shingles, int countHashes = 36)
         {
             List<List<int>> hashes = new List<List<int>>();
@@ -103,12 +104,12 @@ namespace ShilglesLab.Comparers
                 hashes.Add(new List<int>());
                 foreach(var shingle in shingles)
                 {
-                    hashes[i].Add(HashFunc(shingle, i));
+                    hashes[i].Add(HashFunc(shingle, i));//возвращаемое хеш-значение добавим в список
                 }
             }
             return hashes;
         }
-
+/*-----------------------------------------------------------------------------------------*/
         private List<int> GetMinHashes(List<List<int>> hashes)
         {
             List<int> minHashes = new List<int>();
