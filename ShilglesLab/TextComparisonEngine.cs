@@ -16,13 +16,16 @@ namespace ShilglesLab
         public TextComparisonEngine()
         { 
             this.ShComp = new ShinglesComparer(84, 10);
+            /*Расчет мега- и супер- шинглов*/       
             this.SshComp = new SuperShinglesComparer(this.ShComp);
             this.MshComp = new MegaShinglesComparer(this.SshComp);
+            
         }
 
         public void Compare(string textA, string textB)
         {
-            MshComp.ProcessTexts(textA, textB);
+            //MshComp.ProcessTexts(textA, textB);
+            ShComp.ProcessTexts(textA, textB);
         }
 
         public void PrintResults()

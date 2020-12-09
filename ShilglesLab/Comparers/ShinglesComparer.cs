@@ -24,7 +24,9 @@ namespace ShilglesLab.Comparers
 
         public double ProcessTexts(string textA, string textB)
         {
+            Console.WriteLine("Обработка первого текста: ");
             HashesA = CalcMinHashesFromText(textA, HashCount, ShingleSize);
+            Console.WriteLine("Обработка второго текста: ");
             HashesB = CalcMinHashesFromText(textB, HashCount, ShingleSize);
             return EstimateSimilarity(HashCount);
         }

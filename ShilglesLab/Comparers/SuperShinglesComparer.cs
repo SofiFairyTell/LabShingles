@@ -61,7 +61,7 @@ namespace ShilglesLab.Comparers
 
                 }
 
-                //superShingles.Add(hashes.Skip(count * i).Take(count).ToList());     
+                superShingles.Add(hashes.Skip(count * i).Take(count).ToList());     
             }
             return superShingles;
         }
